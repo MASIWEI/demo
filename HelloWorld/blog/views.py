@@ -3,9 +3,10 @@ from __future__ import unicode_literals
 
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from . import models
 def index(request):
-    return render(request, 'blog/index.html', {"hello":"hello world2"})
+    article = models.Article.objects.get(pk=1)
+    return render(request, 'blog/index.html' ,{article:"article"})
 
 
 
