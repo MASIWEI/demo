@@ -1,8 +1,8 @@
-from django.conf.urls import url,include
-from django.contrib import admin
+from django.conf.urls import url, include
 from . import view
+import blog.views as bv
 
 urlpatterns = [
     url(r'^$', view.hello),
-    url(r'^index/',include(blog.urls))
+    url(r'^blog/', bv.index),
 ]
